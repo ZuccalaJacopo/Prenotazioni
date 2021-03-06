@@ -15,7 +15,7 @@ $pdo = new PDO ($dsn, $user, $pass);
 
 //variabili al momento costanti, poi verranno prese tramite POST
 $codice_fiscale = 'BTGLSN00N00B157H';
-$giorno = ''2021-03-06;
+$giorno = '2021-03-06';
 
 //Query di inserimento preparata
 $sql = "INSERT INTO prenotazioni VALUES(null, :codice_fiscale, :giorno)";

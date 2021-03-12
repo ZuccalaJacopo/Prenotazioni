@@ -1,32 +1,32 @@
+
 <?php
 
-ini_set('display-error', 1);
-ini_set('log-error', 0);
+//Dice a livello dello script che gli errori verranno mostrati
+//e che non verranno loggati
+ini_set('display_errors', 1);
+ini_set('log_errors', 0);
 
 $host = 'localhost';
 $db = 'prenotazioni';
 $user = 'root';
 $pass = '';
 
-//stringe la connessione
-$dsn = 'mysql:host=' . $host . 'dbname=' . $db;
+//Stringa di connessione
+$dsn = 'mysql:host=' . $host . ';dbname=' . $db;
 
-$pdo = new PDO ($dsn, $user, $pass);
 
-//variabili al momento costanti, poi verranno prese tramite POST
-$codice_fiscale = 'BTGLSN00N00B157H';
-$giorno = '2021-03-06';
+$pdo = new PDO($dsn, $user, $pass);
 
-//Query di inserimento preparata
-$sql = "INSERT INTO prenotazioni VALUES(null, :codice_fiscale, :giorno)";
+//Query per recuperare tutte le prenotazioni
+$sql = "SELECT * FROM prenotazioni";
 
-//inviamo la query al database che la tiene in pancia
-$stmt = $pdo -> prepare($sql);
+//Invio la query al server MySQL
+$stmt = $pdo->query($sql);
 
-//inviamo i dati co
-$stmt->execute(
-    [
-        'codice_fiscale' => $codice_fiscale,
-        'giorno' => $giorno
-    ]
-);
+//Estraggo le righe di risposta che finiranno come vettori in $result
+$result = $stmt->fetchAll();
+
+//Metodo sporco e veloce per visualizzare il risultato
+echo "<pre>";
+var_dump($result);
+echo "</pre>";

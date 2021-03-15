@@ -1,7 +1,7 @@
 
 <?php
 
-include_once("config.php");
+include_once "config.php";
 
 //Query per recuperare tutte le prenotazioni
 $sql = "SELECT * FROM prenotazioni";

@@ -28,7 +28,7 @@ CREATE TABLE `prenotazioni` (
   `giorno` date NOT NULL,
   `codice_univoco` varchar(64) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+)  ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 

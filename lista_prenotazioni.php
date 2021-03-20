@@ -10,7 +10,7 @@ include_once 'config.php';
 $templates = new League\Pltes\Engine('./view','tpl');
 
 //Query per recuperare tutte le prenotazioni
-$sql = "SELECT * FROM prenotazioni";
+$sql = "SELECT * FROM prenotazioni.prenotazioni";
 
 //Invio la query al server MySQL
 $stmt = $pdo->query($sql);

@@ -9,7 +9,7 @@ use League\Plates\Engine;
 $templates = new Engine('./view','tpl');
 
 //Query per recuperare tutte le prenotazioni
-$sql = "SELECT * FROM prenotazioni WHERE giorno = CURDATE() ORDER BY codice_univoco";
+$sql = "SELECT * FROM prenotazioni.prenotazioni WHERE giorno = CURDATE() ORDER BY codice_univoco";
 
 //Invio la query al server MySQL
 $stmt = $pdo->query($sql);
@@ -17,8 +17,10 @@ $stmt = $pdo->query($sql);
 //Estraggo le righe di risposta che finiranno come vettori in $result
 $result = $stmt->fetchAll();
 
+
 //Rendo un template che mi visualizza la tabella
-echo $templates->render('lista_prenotazioni_oggi',
+echo $templates->render('lista_prenotazioni_giornaliere',
     [
         'result' => $result,
-        'date' => date('d-m-Y')]);
+        'date' => date('d-m-Y')
+    ]);

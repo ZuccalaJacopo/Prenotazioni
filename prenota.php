@@ -49,7 +49,7 @@ else
 {
     //Query di inserimento preparata
     $sql = "INSERT INTO prenotazioni.prenotazioni VALUES(null, :codice_fiscale, :giorno, 
-                                :codice_univoco)";
+                                :codice_univoco,false,null)";
 
     //Inviamo la query al database che la tiene in pancia
     $stmt = $pdo->prepare($sql);
@@ -66,6 +66,5 @@ else
     echo $templates->render('mostra_codice', ['codice_univoco' => $codice_univoco]);
 
 }
-
 
 

@@ -1,8 +1,3 @@
--- MariaDB dump 10.17  Distrib 10.4.11-MariaDB, for Win64 (AMD64)
---
--- Host: 127.0.0.1    Database: tamponi
--- ------------------------------------------------------
--- Server version	10.4.11-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -23,12 +18,14 @@ DROP TABLE IF EXISTS `prenotazioni`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `prenotazioni` (
-                                `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-                                `codice_fiscale` varchar(16) NOT NULL,
-                                `giorno` date NOT NULL,
-                                `codice_univoco` varchar(64) DEFAULT NULL,
-                                PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `codice_fiscale` varchar(16) NOT NULL,
+  `giorno` date NOT NULL,
+  `codice_univoco` varchar(64) NOT NULL,
+  `eseguito` tinyint(1) NOT NULL DEFAULT 0,
+  `note` text DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 

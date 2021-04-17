@@ -11,7 +11,7 @@ $templates = new Engine('./view','tpl');
 //Query per recuperare i giorni disponibili
 $sql = "SELECT gen_date AS giorno, prenotati  
         FROM (SELECT giorno, COUNT(*) as prenotati
-            FROM prenotazioni.prenotazioni
+            FROM prenotazioni
             GROUP BY giorno) AS B RIGHT JOIN (select * from 
         (select adddate('2021-01-01',t4*10000 + t3*1000 + t2*100 + t1*10 + t0) gen_date from
         (select 0 t0 union select 1 union select 2 union select 3 union select 4 union select 5 union select 6 union select 7 union select 8 union select 9) t0,

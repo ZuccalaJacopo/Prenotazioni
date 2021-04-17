@@ -1,8 +1,3 @@
--- MariaDB dump 10.17  Distrib 10.4.14-MariaDB, for Win64 (AMD64)
---
--- Host: 127.0.0.1    Database: prenotazioni
--- ------------------------------------------------------
--- Server version	10.4.14-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
